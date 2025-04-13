@@ -1,0 +1,1 @@
+helm upgrade --install --create-namespace freqtrade ./freqtrade-helm -f ./values.yaml -n freqtrade
