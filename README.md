@@ -14,7 +14,7 @@ To install the chart with the release name `my-freqtrade`:
 
 ```bash
 # Add the Helm repository
-helm repo add freqtrade-helm https://[your-github-username].github.io/freqtrade-helm
+helm repo add freqtrade-helm https://n0rmanc.github.io/freqtrade-helm
 helm repo update
 
 # Install the chart (Option 1: Using helm install)
