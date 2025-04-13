@@ -6,7 +6,7 @@ metadata:
     {{- include "freqtrade-helm.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
-  replicas: {{ .Values.replicaCount }}
+  replicas: 1
   {{- end }}
   selector:
     matchLabels:
@@ -39,6 +39,12 @@ spec:
             runAsGroup: 1000
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          args:
+            - "trade"
+            - "--strategy"
+            - "{{ .Values.freqtrade.strategyName }}"
+            - "--config"
+            - "/freqtrade/user_data/config/config.json"
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
