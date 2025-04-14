@@ -39,14 +39,11 @@ spec:
             runAsGroup: 1000
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command: ["/bin/sh", "-c"]
           args:
-            - "trade"
-            - "--strategy"
-            - "{{ .Values.freqtrade.strategyName }}"
-            - "--config"
-            - "/freqtrade/user_data/config/config.json"
-            - "--db-url"
-            - "{{ .Values.freqtrade.dbUrl }}"
+            - |
+              pip install psycopg2-binary
+              freqtrade trade --strategy {{ .Values.freqtrade.strategyName }} --config /freqtrade/user_data/config/config.json --db-url {{ .Values.freqtrade.dbUrl }}
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
