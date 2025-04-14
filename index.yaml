@@ -3,9 +3,19 @@ entries:
   freqtrade-helm:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-04-14T13:07:56.868382+08:00"
+    created: "2025-04-14T19:49:04.400833+08:00"
     description: A Helm chart for Kubernetes
-    digest: 16efb7d58ccdfecca1acb9b0e195a96c9066a2d657c711caf1dc753721cff6b8
+    digest: 9e962b5c9a5858679ae8c967a2f64f15d5cf585fa732d28d8863d080a8d46188
+    name: freqtrade-helm
+    type: application
+    urls:
+    - https://n0rmanc.github.io/freqtrade-helm/freqtrade-helm-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-04-14T19:49:04.39985+08:00"
+    description: A Helm chart for Kubernetes
+    digest: 17f2b9cb10492845322fb38f2da1dfaaebf8dcab63573a6ba82ede6a75a88446
     name: freqtrade-helm
     type: application
     urls:
@@ -13,7 +23,7 @@ entries:
     version: 0.1.3
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-04-14T13:07:56.867459+08:00"
+    created: "2025-04-14T19:49:04.398977+08:00"
     description: A Helm chart for Kubernetes
     digest: 9c952ef0beb50674b8f16f1a46c5fce6a1f00ef6c0c286cb8b3927ffd41a896b
     name: freqtrade-helm
@@ -23,7 +33,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-04-14T13:07:56.865518+08:00"
+    created: "2025-04-14T19:49:04.398128+08:00"
     description: A Helm chart for Kubernetes
     digest: 4fa18737091da7e6deb9c72dd82699dc98297a8a7e39370321504ae2e42db00e
     name: freqtrade-helm
@@ -33,7 +43,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-04-14T13:07:56.864372+08:00"
+    created: "2025-04-14T19:49:04.397267+08:00"
     description: A Helm chart for Kubernetes
     digest: 120269242086c6e86028e21e254d22adc0d9593882f720fdda92ac5d6e74142d
     name: freqtrade-helm
@@ -41,4 +51,4 @@ entries:
     urls:
     - https://n0rmanc.github.io/freqtrade-helm/freqtrade-helm-0.1.0.tgz
     version: 0.1.0
-generated: "2025-04-14T13:07:56.862645+08:00"
+generated: "2025-04-14T19:49:04.396103+08:00"
