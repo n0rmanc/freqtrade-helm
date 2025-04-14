@@ -55,12 +55,26 @@ spec:
             {{- toYaml .Values.readinessProbe | nindent 12 }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          {{- with .Values.volumeMounts }}
           volumeMounts:
+            - name: config-volume
+              mountPath: /freqtrade/user_data/config
+            - name: strategy-volume
+              mountPath: /freqtrade/user_data/strategies
+            - name: user-data
+              mountPath: /freqtrade/user_data
+          {{- with .Values.volumeMounts }}
             {{- toYaml . | nindent 12 }}
           {{- end }}
-      {{- with .Values.volumes }}
       volumes:
+        - name: config-volume
+          configMap:
+            name: freqtrade-config
+        - name: strategy-volume
+          configMap:
+            name: freqtrade-strategy
+        - name: user-data
+          emptyDir: {}
+      {{- with .Values.volumes }}
         {{- toYaml . | nindent 8 }}
       {{- end }}
       {{- with .Values.nodeSelector }}

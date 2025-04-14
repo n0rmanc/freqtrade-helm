@@ -104,24 +104,10 @@ autoscaling:
   # targetMemoryUtilizationPercentage: 80
 
 # Additional volumes on the output Deployment definition.
-volumes:
-  - name: config-volume
-    configMap:
-      name: freqtrade-config
-  - name: strategy-volume
-    configMap:
-      name: freqtrade-strategy
-  - name: user-data
-    emptyDir: {}
+volumes: []
 
 # Additional volumeMounts on the output Deployment definition.
-volumeMounts:
-  - name: config-volume
-    mountPath: /freqtrade/user_data/config
-  - name: strategy-volume
-    mountPath: /freqtrade/user_data/strategies
-  - name: user-data
-    mountPath: /freqtrade/user_data
+volumeMounts: []
 
 nodeSelector: {}
 
