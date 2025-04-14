@@ -45,6 +45,8 @@ spec:
             - "{{ .Values.freqtrade.strategyName }}"
             - "--config"
             - "/freqtrade/user_data/config/config.json"
+            - "--db-url"
+            - "{{ .Values.freqtrade.dbUrl }}"
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
@@ -60,8 +62,8 @@ spec:
               mountPath: /freqtrade/user_data/config
             - name: strategy-volume
               mountPath: /freqtrade/user_data/strategies
-            - name: user-data
-              mountPath: /freqtrade/user_data
+            - name: db-volume
+              mountPath: /freqtrade/user_data/db
           {{- with .Values.volumeMounts }}
             {{- toYaml . | nindent 12 }}
           {{- end }}
@@ -72,9 +74,9 @@ spec:
         - name: strategy-volume
           configMap:
             name: freqtrade-strategy
-        - name: user-data
+        - name: db-volume
           persistentVolumeClaim:
-            claimName: freqtrade-user-data
+            claimName: freqtrade-db
       {{- with .Values.volumes }}
         {{- toYaml . | nindent 8 }}
       {{- end }}
