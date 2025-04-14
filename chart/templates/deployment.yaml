@@ -73,7 +73,8 @@ spec:
           configMap:
             name: freqtrade-strategy
         - name: user-data
-          emptyDir: {}
+          persistentVolumeClaim:
+            claimName: freqtrade-user-data
       {{- with .Values.volumes }}
         {{- toYaml . | nindent 8 }}
       {{- end }}
