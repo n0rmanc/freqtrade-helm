@@ -104,3 +104,23 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
+## Release Process
+
+To release a new version of the chart:
+
+1.  **Increment the version:** Update the `version` field in `chart/Chart.yaml`.
+2.  **Package the chart:**
+    ```bash
+    helm package chart
+    ```
+3.  **Update the index:**
+    ```bash
+    helm repo index . --url https://n0rmanc.github.io/freqtrade-helm/
+    ```
+4.  **Commit and push:** Add the generated `.tgz` file and the updated `index.yaml` to your git repository and push to the branch serving the chart (e.g., `gh-pages`).
+    ```bash
+    git add ./*.tgz index.yaml chart/Chart.yaml
+    git commit -m "Release chart version <new_version>"
+    git push origin gh-pages # Adjust branch name if needed
+    ```
