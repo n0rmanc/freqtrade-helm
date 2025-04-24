@@ -1,8 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: freqtrade-config
-  namespace: freqtrade
+  name: {{ include "freqtrade-helm.fullname" . }}-config
 data:
   config.json: |
     {{ .Values.freqtrade.config | nindent 4 }}

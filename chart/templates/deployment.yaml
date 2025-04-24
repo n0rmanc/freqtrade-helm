@@ -70,10 +70,10 @@ spec:
             name: freqtrade-config
         - name: strategy-volume
           configMap:
-            name: freqtrade-strategy
+            name: {{ include "freqtrade-helm.fullname" . }}-strategy
         - name: db-volume
           persistentVolumeClaim:
-            claimName: freqtrade-db
+            claimName: {{ include "freqtrade-helm.fullname" . }}-db
       {{- with .Values.volumes }}
         {{- toYaml . | nindent 8 }}
       {{- end }}

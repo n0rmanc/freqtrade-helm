@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: freqtrade-db
+  name: {{ include "freqtrade-helm.fullname" . }}-db
   labels: {{- include "freqtrade-helm.labels" . | nindent 4 }}
 spec:
   accessModes:
