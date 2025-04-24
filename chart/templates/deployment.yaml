@@ -67,7 +67,7 @@ spec:
       volumes:
         - name: config-volume
           configMap:
-            name: freqtrade-config
+            name: {{ include "freqtrade-helm.fullname" . }}-config
         - name: strategy-volume
           configMap:
             name: {{ include "freqtrade-helm.fullname" . }}-strategy
