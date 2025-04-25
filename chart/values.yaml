@@ -121,6 +121,7 @@ tolerations: []
 affinity: {}
 
 freqtrade:
+    dbUrl: sqlite:////freqtrade/user_data/db/tradesv3.sqlite
     strategyName: SampleStrategy
     config: |
         {
@@ -629,5 +630,4 @@ freqtrade:
                 ] = 1
 
                 return dataframe
-
-    dbUrl: sqlite:////freqtrade/user_data/db/tradesv3.sqlite
+    strategy_params: ''
