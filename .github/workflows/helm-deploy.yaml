@@ -1,0 +1,47 @@
+name: Release Helm Chart
+
+on:
+  push:
+    tags:
+      - "v*"
+
+env:
+  HELM_VERSION: v3.12.3
+  CHART_PATH: ./chart
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get tag version
+        id: get_version
+        run: |
+          echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+
+      - name: Setup Helm
+        uses: azure/setup-helm@v3
+        with:
+          version: ${{ env.HELM_VERSION }}
+
+      - name: Update Chart version
+        run: |
+          sed -i "s/version:.*/version: ${{ steps.get_version.outputs.VERSION }}/" ${{ env.CHART_PATH }}/Chart.yaml
+
+      - name: Package Helm chart
+        run: |
+          helm package ${{ env.CHART_PATH }}
+
+      - name: Generate Helm index
+        run: |
+          helm repo index . --url https://n0rmanc.github.io/freqtrade-helm/
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          publish_branch: gh-pages
+          keep_files: true
