@@ -5,6 +5,9 @@ on:
     tags:
       - "v*"
 
+permissions:
+  contents: write
+
 env:
   HELM_VERSION: v3.12.3
   CHART_PATH: ./chart
