@@ -4,6 +4,10 @@ metadata:
   name: {{ include "freqtrade-helm.fullname" . }}
   labels:
     {{- include "freqtrade-helm.labels" . | nindent 4 }}
+  {{- with .Values.deploymentAnnotations }}
+    annotations:
+      {{- toYaml . | nindent 4 }}
+  {{- end }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: 1
@@ -13,10 +17,12 @@ spec:
       {{- include "freqtrade-helm.selectorLabels" . | nindent 6 }}
   template:
     metadata:
-      {{- with .Values.podAnnotations }}
       annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/config_map_config.yaml") . | sha256sum }}
+        checksum/strategy: {{ include (print $.Template.BasePath "/config_map_strategy.yaml") . | sha256sum }}
+        {{- with .Values.podAnnotations }}
         {{- toYaml . | nindent 8 }}
-      {{- end }}
+        {{- end }}
       labels:
         {{- include "freqtrade-helm.labels" . | nindent 8 }}
         {{- with .Values.podLabels }}

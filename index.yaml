@@ -3,92 +3,12 @@ entries:
   freqtrade-helm:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-04-25T01:55:34.447330149Z"
+    created: "2025-04-30T11:07:32.702802406Z"
     description: A Helm chart for Kubernetes
-    digest: 8f95a8818d7b61de6eac0eaab0fc34cd0a8bf1c22e64b08fb9befb350d1bb936
+    digest: b10ac9ac9afe66da30812f543eb6cc482e9dd005810d91777b2fc6cdcf26e1ab
     name: freqtrade-helm
     type: application
     urls:
-    - https://n0rmanc.github.io/freqtrade-helm/freqtrade-helm-0.1.8.tgz
-    version: 0.1.8
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2025-04-25T01:55:34.446341929Z"
-    description: A Helm chart for Kubernetes
-    digest: 0b44eeca1c85baacb757299b3ad1e0eb18851462e5ad063e238802b4d0521639
-    name: freqtrade-helm
-    type: application
-    urls:
-    - https://n0rmanc.github.io/freqtrade-helm/freqtrade-helm-0.1.7.tgz
-    version: 0.1.7
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2025-04-25T01:55:34.445330795Z"
-    description: A Helm chart for Kubernetes
-    digest: 68e424a20625af80c81cfaa681f7a3679d20ebe81ebff0f73135f7dfc29f40d6
-    name: freqtrade-helm
-    type: application
-    urls:
-    - https://n0rmanc.github.io/freqtrade-helm/freqtrade-helm-0.1.6.tgz
-    version: 0.1.6
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2025-04-25T01:55:34.444294665Z"
-    description: A Helm chart for Kubernetes
-    digest: 25e66992ef7266624b743d909237874c1e5024c818cdfb1af218d9b82d2b3e07
-    name: freqtrade-helm
-    type: application
-    urls:
-    - https://n0rmanc.github.io/freqtrade-helm/freqtrade-helm-0.1.5.tgz
-    version: 0.1.5
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2025-04-25T01:55:34.442569889Z"
-    description: A Helm chart for Kubernetes
-    digest: 9e962b5c9a5858679ae8c967a2f64f15d5cf585fa732d28d8863d080a8d46188
-    name: freqtrade-helm
-    type: application
-    urls:
-    - https://n0rmanc.github.io/freqtrade-helm/freqtrade-helm-0.1.4.tgz
-    version: 0.1.4
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2025-04-25T01:55:34.441580827Z"
-    description: A Helm chart for Kubernetes
-    digest: 17f2b9cb10492845322fb38f2da1dfaaebf8dcab63573a6ba82ede6a75a88446
-    name: freqtrade-helm
-    type: application
-    urls:
-    - https://n0rmanc.github.io/freqtrade-helm/freqtrade-helm-0.1.3.tgz
-    version: 0.1.3
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2025-04-25T01:55:34.440574282Z"
-    description: A Helm chart for Kubernetes
-    digest: 9c952ef0beb50674b8f16f1a46c5fce6a1f00ef6c0c286cb8b3927ffd41a896b
-    name: freqtrade-helm
-    type: application
-    urls:
-    - https://n0rmanc.github.io/freqtrade-helm/freqtrade-helm-0.1.2.tgz
-    version: 0.1.2
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2025-04-25T01:55:34.439582966Z"
-    description: A Helm chart for Kubernetes
-    digest: 4fa18737091da7e6deb9c72dd82699dc98297a8a7e39370321504ae2e42db00e
-    name: freqtrade-helm
-    type: application
-    urls:
-    - https://n0rmanc.github.io/freqtrade-helm/freqtrade-helm-0.1.1.tgz
-    version: 0.1.1
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2025-04-25T01:55:34.438568656Z"
-    description: A Helm chart for Kubernetes
-    digest: 120269242086c6e86028e21e254d22adc0d9593882f720fdda92ac5d6e74142d
-    name: freqtrade-helm
-    type: application
-    urls:
-    - https://n0rmanc.github.io/freqtrade-helm/freqtrade-helm-0.1.0.tgz
-    version: 0.1.0
-generated: "2025-04-25T01:55:34.437295332Z"
+    - https://n0rmanc.github.io/freqtrade-helm/freqtrade-helm-0.1.9.tgz
+    version: 0.1.9
+generated: "2025-04-30T11:07:32.701639851Z"
